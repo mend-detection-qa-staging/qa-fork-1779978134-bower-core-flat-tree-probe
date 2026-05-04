@@ -1,0 +1,90 @@
+{
+    "schema_version": "1.0",
+    "pm": "bower",
+    "manifest": "bower.json",
+    "lockfile": null,
+    "detection_mode": "manifest-only",
+    "patterns": ["flat-resolution-basic", "transitive-flat"],
+    "notes": "Manifest-only probe. No bower_components/ committed. Exact versions are resolved by the Bower registry at scan time; semver ranges in bower.json are ^5.3.0 (bootstrap), ^1.6.0 (backbone), ^2.30.0 (moment). The tree-builder agent must fill in resolved versions after a real bower install. Parent-chain attribution for jquery (under bootstrap) and underscore (under backbone) is the primary detection assertion.",
+    "packages": [
+        {
+            "name": "bootstrap",
+            "version": "5.3.x",
+            "version_constraint": "^5.3.0",
+            "scope": "runtime",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "children": [
+                {
+                    "name": "jquery",
+                    "version": null,
+                    "version_constraint": "resolved by bootstrap's bower.json dependencies",
+                    "scope": "runtime",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "backbone",
+            "version": "1.6.x",
+            "version_constraint": "^1.6.0",
+            "scope": "runtime",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "children": [
+                {
+                    "name": "underscore",
+                    "version": null,
+                    "version_constraint": "resolved by backbone's bower.json dependencies",
+                    "scope": "runtime",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "moment",
+            "version": "2.30.x",
+            "version_constraint": "^2.30.0",
+            "scope": "runtime",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "children": []
+        }
+    ],
+    "total_packages": 5,
+    "direct_count": 3,
+    "transitive_count": 2,
+    "unique_packages": [
+        "bootstrap",
+        "backbone",
+        "moment",
+        "jquery",
+        "underscore"
+    ],
+    "mend_detection_expectations": {
+        "all_packages_must_appear": true,
+        "source_for_all": "registry",
+        "no_missing_transitives": true,
+        "flat_layout": true,
+        "parent_chain_inference_required": true,
+        "resolutions_field_used": false,
+        "lockfile_present": false,
+        "bower_components_committed": false,
+        "failure_modes_exercised": [
+            "bower.json not detected (no lockfile present — manifest-only detection required)",
+            "all 5 packages reported as direct (flat layout misread — transitive parent-chain not inferred)",
+            "jquery missing or not attributed to bootstrap",
+            "underscore missing or not attributed to backbone",
+            "moment silently dropped (no transitives — direct-only package)"
+        ]
+    }
+}

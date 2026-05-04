@@ -1,0 +1,11 @@
+{
+  "name": "bower-core-flat-tree-probe",
+  "version": "1.0.0",
+  "description": "Bower probe: flat resolution baseline with transitive deps in flat layout",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "backbone": "^1.6.0",
+    "moment": "^2.30.0"
+  }
+}
