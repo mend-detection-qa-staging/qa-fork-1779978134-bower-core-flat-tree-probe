@@ -22,7 +22,7 @@ After `bower install`, 5 packages appear at the top level of `bower_components/`
 
 | Package | Version (likely) | Source | Group | Direct? | Parent |
 |---|---|---|---|---|---|
-| bootstrap | 5.3.x | registry | main | yes | (root) |
+| bootstrap | 3.4.x | registry | main | yes | (root) |
 | backbone | 1.6.x | registry | main | yes | (root) |
 | moment | 2.30.x | registry | main | yes | (root) |
 | jquery | resolved by bootstrap's constraint | registry | main | no | bootstrap |

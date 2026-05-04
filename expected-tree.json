@@ -1,16 +1,19 @@
 {
     "schema_version": "1.0",
     "pm": "bower",
+    "pm_version_tested": "1.8",
+    "source_file": "/Users/palinasupranovich/PycharmProjects/qa-detection-repo-integration/output/bower/flat-resolution-basic-transitive-flat-20260504-160135/bower.json",
     "manifest": "bower.json",
     "lockfile": null,
     "detection_mode": "manifest-only",
     "patterns": ["flat-resolution-basic", "transitive-flat"],
-    "notes": "Manifest-only probe. No bower_components/ committed. Exact versions are resolved by the Bower registry at scan time; semver ranges in bower.json are ^5.3.0 (bootstrap), ^1.6.0 (backbone), ^2.30.0 (moment). The tree-builder agent must fill in resolved versions after a real bower install. Parent-chain attribution for jquery (under bootstrap) and underscore (under backbone) is the primary detection assertion.",
+    "notes": "Bootstrap pinned to ^3.4.0. Bootstrap 3.4.1 ships a bower.json with jquery declared as a dependency (constraint: 1.9.1 - 3). Bower 1.8.14 resolved jquery to 3.7.1. This gives the required bootstrap -> jquery parent chain. backbone -> underscore chain also confirmed. All 5 packages verified from bower_components/<pkg>/.bower.json on 2026-05-04.",
     "packages": [
         {
             "name": "bootstrap",
-            "version": "5.3.x",
-            "version_constraint": "^5.3.0",
+            "artifactId": "bootstrap",
+            "version": "3.4.1",
+            "version_constraint": "^3.4.0",
             "scope": "runtime",
             "group": "main",
             "source": "registry",
@@ -18,8 +21,9 @@
             "children": [
                 {
                     "name": "jquery",
-                    "version": null,
-                    "version_constraint": "resolved by bootstrap's bower.json dependencies",
+                    "artifactId": "jquery",
+                    "version": "3.7.1",
+                    "version_constraint": "1.9.1 - 3",
                     "scope": "runtime",
                     "group": "main",
                     "source": "registry",
@@ -30,7 +34,8 @@
         },
         {
             "name": "backbone",
-            "version": "1.6.x",
+            "artifactId": "backbone",
+            "version": "1.6.1",
             "version_constraint": "^1.6.0",
             "scope": "runtime",
             "group": "main",
@@ -39,8 +44,9 @@
             "children": [
                 {
                     "name": "underscore",
-                    "version": null,
-                    "version_constraint": "resolved by backbone's bower.json dependencies",
+                    "artifactId": "underscore",
+                    "version": "1.13.8",
+                    "version_constraint": ">=1.8.3",
                     "scope": "runtime",
                     "group": "main",
                     "source": "registry",
@@ -51,7 +57,8 @@
         },
         {
             "name": "moment",
-            "version": "2.30.x",
+            "artifactId": "moment",
+            "version": "2.30.1",
             "version_constraint": "^2.30.0",
             "scope": "runtime",
             "group": "main",
@@ -64,11 +71,11 @@
     "direct_count": 3,
     "transitive_count": 2,
     "unique_packages": [
-        "bootstrap",
-        "backbone",
-        "moment",
-        "jquery",
-        "underscore"
+        "bootstrap:3.4.1",
+        "backbone:1.6.1",
+        "moment:2.30.1",
+        "jquery:3.7.1",
+        "underscore:1.13.8"
     ],
     "mend_detection_expectations": {
         "all_packages_must_appear": true,
@@ -79,6 +86,8 @@
         "resolutions_field_used": false,
         "lockfile_present": false,
         "bower_components_committed": false,
+        "bootstrap_jquery_parent_chain": true,
+        "backbone_underscore_parent_chain": true,
         "failure_modes_exercised": [
             "bower.json not detected (no lockfile present — manifest-only detection required)",
             "all 5 packages reported as direct (flat layout misread — transitive parent-chain not inferred)",
