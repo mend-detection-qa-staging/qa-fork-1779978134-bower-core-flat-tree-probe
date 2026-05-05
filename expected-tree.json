@@ -1,99 +1,68 @@
 {
-    "schema_version": "1.0",
-    "pm": "bower",
-    "pm_version_tested": "1.8",
-    "source_file": "/Users/palinasupranovich/PycharmProjects/qa-detection-repo-integration/output/bower/flat-resolution-basic-transitive-flat-20260504-160135/bower.json",
-    "manifest": "bower.json",
-    "lockfile": null,
-    "detection_mode": "manifest-only",
-    "patterns": ["flat-resolution-basic", "transitive-flat"],
-    "notes": "Bootstrap pinned to ^3.4.0. Bootstrap 3.4.1 ships a bower.json with jquery declared as a dependency (constraint: 1.9.1 - 3). Bower 1.8.14 resolved jquery to 3.7.1. This gives the required bootstrap -> jquery parent chain. backbone -> underscore chain also confirmed. All 5 packages verified from bower_components/<pkg>/.bower.json on 2026-05-04.",
-    "packages": [
+  "schema_version": "1.0",
+  "pm": "bower",
+  "pm_version_tested": "1.8",
+  "manifest": "bower.json",
+  "patterns": [
+    "flat-resolution-basic",
+    "transitive-flat"
+  ],
+  "notes": "Bootstrap pinned to ^3.4.0. Bootstrap 3.4.1 ships a bower.json with jquery declared as a dependency (constraint: 1.9.1 - 3). Bower 1.8.14 resolved jquery to 3.7.1. This gives the required bootstrap -> jquery parent chain. backbone -> underscore chain also confirmed. All 5 packages verified from bower_components/<pkg>/.bower.json on 2026-05-04.",
+  "projects": [
+    {
+      "projectToken": "",
+      "dependencies": [
         {
-            "name": "bootstrap",
-            "artifactId": "bootstrap",
-            "version": "3.4.1",
-            "version_constraint": "^3.4.0",
-            "scope": "runtime",
-            "group": "main",
-            "source": "registry",
-            "direct": true,
-            "children": [
-                {
-                    "name": "jquery",
-                    "artifactId": "jquery",
-                    "version": "3.7.1",
-                    "version_constraint": "1.9.1 - 3",
-                    "scope": "runtime",
-                    "group": "main",
-                    "source": "registry",
-                    "direct": false,
-                    "children": []
-                }
-            ]
+          "artifactId": "bootstrap",
+          "version": "3.4.1",
+          "filename": "bootstrap",
+          "systemPath": "",
+          "optional": false,
+          "children": [
+            {
+              "artifactId": "jquery",
+              "version": "3.7.1",
+              "filename": "jquery",
+              "systemPath": "",
+              "optional": false,
+              "children": []
+            }
+          ]
         },
         {
-            "name": "backbone",
-            "artifactId": "backbone",
-            "version": "1.6.1",
-            "version_constraint": "^1.6.0",
-            "scope": "runtime",
-            "group": "main",
-            "source": "registry",
-            "direct": true,
-            "children": [
-                {
-                    "name": "underscore",
-                    "artifactId": "underscore",
-                    "version": "1.13.8",
-                    "version_constraint": ">=1.8.3",
-                    "scope": "runtime",
-                    "group": "main",
-                    "source": "registry",
-                    "direct": false,
-                    "children": []
-                }
-            ]
+          "artifactId": "backbone",
+          "version": "1.6.1",
+          "filename": "backbone",
+          "systemPath": "",
+          "optional": false,
+          "children": [
+            {
+              "artifactId": "underscore",
+              "version": "1.13.8",
+              "filename": "underscore",
+              "systemPath": "",
+              "optional": false,
+              "children": []
+            }
+          ]
         },
         {
-            "name": "moment",
-            "artifactId": "moment",
-            "version": "2.30.1",
-            "version_constraint": "^2.30.0",
-            "scope": "runtime",
-            "group": "main",
-            "source": "registry",
-            "direct": true,
-            "children": []
+          "artifactId": "moment",
+          "version": "2.30.1",
+          "filename": "moment",
+          "systemPath": "",
+          "optional": false,
+          "children": []
         }
-    ],
-    "total_packages": 5,
-    "direct_count": 3,
-    "transitive_count": 2,
-    "unique_packages": [
-        "bootstrap:3.4.1",
-        "backbone:1.6.1",
-        "moment:2.30.1",
-        "jquery:3.7.1",
-        "underscore:1.13.8"
-    ],
-    "mend_detection_expectations": {
-        "all_packages_must_appear": true,
-        "source_for_all": "registry",
-        "no_missing_transitives": true,
-        "flat_layout": true,
-        "parent_chain_inference_required": true,
-        "resolutions_field_used": false,
-        "lockfile_present": false,
-        "bower_components_committed": false,
-        "bootstrap_jquery_parent_chain": true,
-        "backbone_underscore_parent_chain": true,
-        "failure_modes_exercised": [
-            "bower.json not detected (no lockfile present — manifest-only detection required)",
-            "all 5 packages reported as direct (flat layout misread — transitive parent-chain not inferred)",
-            "jquery missing or not attributed to bootstrap",
-            "underscore missing or not attributed to backbone",
-            "moment silently dropped (no transitives — direct-only package)"
-        ]
+      ]
     }
+  ],
+  "scanSummaryInfo": {
+    "packageManagers": [
+      "Bower"
+    ]
+  },
+  "extraProperties": {
+    "repository": "mend-detection-qa/bower-core-flat-tree-probe"
+  }
 }
